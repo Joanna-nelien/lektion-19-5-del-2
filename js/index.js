@@ -1,14 +1,28 @@
 let todos = []; // en tom array
-console.log(document);
 const buttonElem = document.querySelector("#add-todo-button");
-console.log(buttonElem);
+const todoList = document.querySelector("#todoList");
+console.log(buttonElem); 
 
-buttonElem.addEventListener("click", () => {
+//for(let i = 0; i < 5; i++);
+
+function displayTodos() {
+   let todoItems = "";
+    for (let i = 0; i < todos.length; i++) {
+      console.log("Todo nr: ", i);
+      console.log("Todo: ", todos[i]);
+
+      todoItems =  todoItems + "<p>" + todos[i] + "</p>"
+      todoList.innerHTML = todos;
+    }
+}
+
+buttonElem.addEventListener("click", function ()  {
 
   const todo = prompt("Vad vill du göra?");
 
 todos.push(todo);
 
-console.log(todos);
+displayTodos();
+
 });
 
